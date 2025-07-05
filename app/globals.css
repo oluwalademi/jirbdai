@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========== BASE STYLES ========== */
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #171717;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: #0a0a0a;
+      --foreground: #ededed;
+    }
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    padding: 0;
+    margin: 0 auto;
+    color: var(--foreground);
+    background: var(--background);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+}
+
+/* ========== UTILITIES ========== */
+@layer utilities {
+  /* Scrollbar */
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hidden {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* ===== TYPOGRAPHY ===== */
+  .h1 {
+    @apply text-black font-inter text-[3.25rem] leading-[3.75rem] font-extrabold;
+  }
+
+  .robotoflex-semibold-16 {
+    @apply text-ash font-robotoflex text-[1rem] font-semibold;
+  }
+
+  .robotoflex-semibold-12 {
+    @apply text-ash font-robotoflex text-[0.7rem] font-semibold;
+  }
+
+  .inter-medium-12 {
+    @apply text-ash font-inter text-[0.75rem] font-medium;
+  }
+
+  .btn-inter-medium-14 {
+    @apply rounded-full px-6 py-3 font-inter text-[0.875rem] font-medium shadow-custom-1;
+  }
+
+  /* ===== HAMBURGER MENU ===== */
+  .hamburger {
+    @apply md:hidden flex flex-col justify-between w-[30px] h-[20px] cursor-pointer z-[1000];
+  }
+
+  .nav-dash {
+    @apply w-full h-[3px] bg-[#4d4d4f] transition-all duration-300 ease-in-out;
+  }
+
+  .hamburger-active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger-active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+  }
+
+  /* ===== LAYOUT ===== */
+  .container {
+    @apply mx-auto max-w-7xl px-5;
+  }
+
+  .default-layout {
+    @apply m-0 mx-auto w-full min-w-[540px] max-w-[1440px] bg-white p-0;
+  }
+
+  .new-section {
+    @apply flex-center flex w-full flex-col gap-0 px-20 !important;
+  }
+
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  .justify-center-space-between {
+    @apply flex items-center justify-end self-stretch;
+  }
+  .paper-issues{
+    @apply brand-gradient-ash grid gap-x-4 gap-y-2;
+  }
+  .paper-issues {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  @media (min-width: 860px) {
+    .paper-issues {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .paper-issues {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  /* ===== COLORS & BACKGROUND ===== */
+  .brand-gradient {
+    @apply w-full bg-gradient-to-r from-[#bad3da] to-[#8cb2bd] p-0;
+  }
+
+  .brand-gradient-ash{
+    @apply background-ash-100 background-ash-200 w-full bg-gradient-to-b p-8
+  }
+
+  .bg-section {
+    @apply background-ash-100 background-ash-200 flex w-full items-start bg-gradient-to-b p-8;
+  }
+
+  .background-ash-100 {
+    @apply bg-[rgba(118,112,112,0.2)];
+  }
+
+  .background-ash-200 {
+    @apply from-[rgba(190,190,190,0.3)] to-white;
+  }
+
+  /* ===== COMPONENTS ===== */
+  .article-card-template {
+    @apply flex flex-col items-start justify-start gap-[10px] p-[12px_20px] min-h-[296px] max-h-[400px] w-full min-w-[320px] max-w-[1600px] flex-shrink-0 relative rounded-[4px] shadow-[0px_0px_9.8px_0px_rgba(0,0,0,0.2)];
+  }
+  .research-card-template {
+    @apply flex flex-col items-start justify-start gap-[10px] p-[12px_20px] min-h-[296px] max-h-[400px] w-full min-w-[500px] max-w-[1600px] flex-shrink-0 relative rounded-[4px] justify-center shadow-[0px_0px_9.8px_0px_rgba(0,0,0,0.2)];
+  }
+
+  .primary-btn {
+    @apply bg-brand hover:bg-brand-100 transition-all rounded-full !important;
+  }
+
+  /* ===== HEADER ===== */
+  .jirbdai-header-logo {
+    @apply lg:w-[min(50vw,450px)] sm:w-[min(50vw,320px)] !important;
+  }
+
+  .jirbdai-miniheader-logo {
+    @apply w-[min(50vw,200px)] !important;
+  }
+
+  .header {
+    @apply hidden items-center justify-between gap-20 px-20 sm:flex xl:gap-20 !important;
+  }
+
+  .header-nav {
+    @apply hidden sm:block !important;
+  }
+
+  .header-wrapper {
+    @apply flex-center min-w-fit gap-4 !important;
+  }
+
+  .sub-header-nav-link {
+    @apply flex flex-col absolute top-[146.5px] left-0 right-0 bg-white p-5
+    border-b border-gray-300 md:flex font-black z-50;
+  }
+}
