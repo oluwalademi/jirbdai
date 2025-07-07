@@ -16,7 +16,12 @@
     }
   }
   html {
+    align-self: stretch;
+    width: 100%;
+    height: 100%;
     scroll-behavior: smooth;
+    display: block;
+    min-width: 540px;
   }
 
   body {
@@ -25,6 +30,9 @@
     color: var(--foreground);
     background: var(--background);
     font-family: Arial, Helvetica, sans-serif;
+  }
+  h3 {
+    @apply text-black font-inter text-[1.25rem] leading-[2rem] font-extrabold uppercase;
   }
 }
 
@@ -43,6 +51,7 @@
   .h1 {
     @apply text-black font-inter text-[3.25rem] leading-[3.75rem] font-extrabold;
   }
+
 
   .robotoflex-semibold-16 {
     @apply text-ash font-robotoflex text-[1rem] font-semibold;
@@ -87,7 +96,7 @@
   }
 
   .default-layout {
-    @apply m-0 mx-auto w-full min-w-[540px] max-w-[1440px] bg-white p-0;
+    @apply m-0 mx-auto w-full min-w-[520px] max-w-[1440px] bg-white p-0;
   }
 
   .new-section {
@@ -139,6 +148,10 @@
 
   .background-ash-200 {
     @apply from-[rgba(190,190,190,0.3)] to-white;
+  }
+
+  .link-text{
+    @apply font-bold text-blue-600 text-nowrap;
   }
 
   /* ===== COMPONENTS ===== */

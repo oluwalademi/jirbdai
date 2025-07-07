@@ -20,6 +20,9 @@ const config: Config = {
         "md-custom": "860px",
         "lg-custom": "1220px",
       },
+      transform: {
+        "rotate-x-180": "rotateX(180deg)",
+      },
       colors: {
         brand: {
           "100": "#00C8FF",

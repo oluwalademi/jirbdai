@@ -1,6 +1,11 @@
 import React from "react";
 import TopBar from "@/components/TopBar";
 
+export enum FlexClass {
+  None = "md:flex-none",
+  Flex = "md:flex",
+}
+
 type NavItem = {
   name: string;
   url: string;
@@ -10,13 +15,17 @@ type Props = {
   item?: NavItem[];
   title?: string; // optional prop
   children?: React.ReactNode;
+  flexStyle?: FlexClass; // optional: use enum here
 };
-const SidebarSection = ({ item, title, children }: Props) => {
+const SidebarSection = ({
+  item,
+  title,
+  children,
+  flexStyle = FlexClass.None,
+}: Props) => {
   return (
     <div
-      className={
-        "relative m-0 flex w-full min-w-[320px] flex-1 flex-col self-stretch md:w-[320px] md:flex-none"
-      }
+      className={`m-0 flex w-full min-w-[320px] flex-1 flex-col self-stretch md:w-[320px] ${flexStyle}`}
     >
       <TopBar titleHeader={title ?? "Section"} />
       <div className={"bg-section mb-32 flex-col"}>

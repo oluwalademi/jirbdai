@@ -32,7 +32,7 @@ const Page = () => {
           <TopBar titleHeader={"About the Journal (JIRBDAI)"} />
           <div className="flex h-24 w-full items-center overflow-hidden">
             <Image
-              src="/assets/images/random-images/man-in-a-laboratory-doing-a-research-work.svg"
+              src="/assets/images/random-images/man-in-a-laboratory-doing-a-research-work-one.svg"
               alt="man in a Laboratory doing a research Work"
               width={900}
               height={900}
@@ -80,12 +80,12 @@ const Page = () => {
           </div>
         </div>
 
-        <section className="container flex w-full flex-wrap justify-between gap-10">
+        <section className="container flex w-full flex-row flex-wrap justify-between gap-10">
           <SidebarSection item={information} title="Section" />
 
           <div
             id="for-readers"
-            className="flex flex-1 flex-col gap-8 text-black"
+            className="flex min-w-[320px] flex-1 flex-col gap-8 text-black"
           >
             <div className="flex flex-col gap-6">
               <SubTopBar titleHeader="For Readers" />

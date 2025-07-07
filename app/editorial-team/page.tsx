@@ -24,7 +24,7 @@ const Page = () => {
 
         <div className="flex flex-1 flex-col">
           <TopBar titleHeader={"Board of Editors"} />
-          <div className="background-ash-100 background-ash-200 mb-20 flex flex-row flex-wrap bg-gradient-to-b">
+          <div className="background-ash-100 background-ash-200 mb-20 flex flex-row flex-wrap bg-gradient-to-b !px-5">
             {navBoardTeamPerson.map((section, sectionIndex) => {
               const sectionId = section.name.toLowerCase().replace(/\s+/g, "-");
               return (
@@ -34,7 +34,7 @@ const Page = () => {
                   id={sectionId}
                 >
                   <div className="mx-4 flex self-stretch border-b-2 border-gray-400"></div>
-                  <h2 className="mb-4 mt-3 flex items-center gap-2 pl-9 text-xl font-bold text-black">
+                  <h2 className="mb-2 mt-3 flex items-center gap-2 pl-9 text-xl font-bold text-black">
                     {section.name}
                     <a
                       href={`#${sectionId}`}

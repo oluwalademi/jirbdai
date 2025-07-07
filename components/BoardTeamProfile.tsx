@@ -29,12 +29,14 @@ const BoardTeamProfile = ({ name, img, university, country }: Props) => {
         </div>
 
         {/* Text container */}
-        <div className="flex w-full flex-col items-start justify-center gap-2 self-stretch py-3">
-          <div className="flex font-inter text-[1.125rem] font-bold leading-7 text-curiousblue">
-            {name}
-          </div>
-          <div className="flex self-stretch font-inter text-[1rem] font-bold leading-7 text-ash">
-            {university}
+        <div className="flex w-full flex-col items-start justify-center gap-1 self-stretch py-3">
+          <div>
+            <div className="leading-1 flex font-inter text-[1rem] font-bold text-curiousblue">
+              {name}
+            </div>
+            <div className="flex self-stretch font-inter text-[0.9rem] font-bold leading-7 text-ash">
+              {university}
+            </div>
           </div>
           <div className="font-inter text-[0.875rem] font-normal leading-7 text-black">
             {country}
