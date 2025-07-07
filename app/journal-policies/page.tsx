@@ -6,7 +6,7 @@ import TopBar from "@/components/TopBar";
 import SubTopBar from "@/components/SubTopBar";
 import Image from "next/image";
 import SidebarSection from "@/components/SidebarSection";
-import Reage from "@/app/(auth)/page";
+import Reage from "@/app/(auth)/login/page";
 
 const page = () => {
   return (
