@@ -5,6 +5,8 @@
 import { useState } from "react";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 export default function LoginPage() {
   const [isChecked, setIsChecked] = useState(false);
 

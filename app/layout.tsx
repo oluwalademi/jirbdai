@@ -25,6 +25,8 @@ const numans = Numans({
   weight: ["400"], // Only one available weight
 });
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "JIRBDAI",
   description:
