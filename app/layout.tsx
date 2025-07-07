@@ -43,7 +43,6 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@100..900&display=swap"
           rel="stylesheet"
         />
-        <meta name="viewport" content="width=540" />
       </head>
       <body
         className={`${inter.variable} ${roboto.variable} ${numans.variable} relative inset-x-0 w-full min-w-[540px]  justify-items-center  bg-white antialiased`}
