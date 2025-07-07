@@ -4,7 +4,7 @@ import Offset from "@/components/header/Offset";
 
 const scientific = () => {
   return (
-    <div className={"flex flex-col"}>
+    <div className={"flex w-full flex-col"}>
       <div className={"py-2"}>
         <div className={"h1"}>
           Why Is Scientific Journalism Important to Publishers ?
@@ -15,8 +15,8 @@ const scientific = () => {
       </div>
       <div className={"my-2 w-full border-2 border-black"}></div>
       <div>
-        <div className={"flex flex-wrap gap-10 py-4"}>
-          <div className="min-w-[320px] flex-1 px-4 pt-4 text-black">
+        <div className={"news-container"}>
+          <div className=" flex-1 px-4 pt-4 text-black">
             <span className={"font-bold"}>Scientific journalism </span>
             <span>
               is more than a communication tool — it&#39;s the foundation of
@@ -33,7 +33,7 @@ const scientific = () => {
               for authors? Let’s break it down:
             </span>
           </div>
-          <div className="left-container w-full min-w-[320px] flex-1">
+          <div className="left-container w-full  flex-1">
             <div className="w-full">
               <Image
                 src={"/assets/images/random-images/laboratory.svg"}
@@ -45,8 +45,8 @@ const scientific = () => {
             </div>
           </div>
         </div>
-        <div className={"flex flex-wrap gap-10 py-4"}>
-          <div className="min-w-[320px] flex-1 px-4 pt-4 text-black">
+        <div className={"news-container"}>
+          <div className=" flex-1 px-4 pt-4 text-black">
             <span className={"font-bold"}>
               1. Sharing Knowledge with the World
             </span>
@@ -61,8 +61,8 @@ const scientific = () => {
             </span>
           </div>
         </div>
-        <div className={"flex flex-wrap gap-10 py-4"}>
-          <div className="min-w-[320px] flex-1 px-4 pt-4 text-black">
+        <div className={"news-container"}>
+          <div className=" flex-1 px-4 pt-4 text-black">
             <span className={"font-bold"}>
               2. Earning Recognition and Credibility
             </span>
@@ -76,8 +76,8 @@ const scientific = () => {
             </span>
           </div>
         </div>
-        <div className={"flex flex-wrap gap-10 py-4"}>
-          <div className="left-container w-full min-w-[320px] flex-1">
+        <div className={"news-container"}>
+          <div className="left-container w-full  flex-1">
             <div className="w-full">
               <Image
                 src={"/assets/images/random-images/award-a-trophy.svg"}
@@ -89,8 +89,8 @@ const scientific = () => {
             </div>
           </div>
         </div>
-        <div className={"flex flex-wrap gap-10 py-4"}>
-          <div className="min-w-[320px] flex-1 px-4 pt-4 text-black">
+        <div className={"news-container"}>
+          <div className=" flex-1 px-4 pt-4 text-black">
             <span className={"font-bold"}>3. Climbing the Career Ladder</span>
             <br />
             <span>
@@ -102,8 +102,8 @@ const scientific = () => {
             </span>
           </div>
         </div>
-        <div className={"flex flex-wrap gap-10 py-4"}>
-          <div className="min-w-[320px] flex-1 px-4 pt-4 text-black">
+        <div className={"news-container"}>
+          <div className=" flex-1 px-4 pt-4 text-black">
             <span className={"font-bold"}>
               4. Attracting Funding and Collaborations{" "}
             </span>
@@ -115,8 +115,8 @@ const scientific = () => {
             </span>
           </div>
         </div>
-        <div className={"flex flex-wrap gap-10 py-4"}>
-          <div className="min-w-[320px] flex-1 px-4 pt-4 text-black">
+        <div className={"news-container"}>
+          <div className=" flex-1 px-4 pt-4 text-black">
             <span className={"font-bold"}>
               5. Contributing to the Scientific Conversation
             </span>
@@ -129,8 +129,8 @@ const scientific = () => {
             </span>
           </div>
         </div>
-        <div className={"flex flex-wrap gap-10 py-4"}>
-          <div className="min-w-[320px] flex-1 px-4 pt-4 text-black">
+        <div className={"news-container"}>
+          <div className=" flex-1 px-4 pt-4 text-black">
             <span className={"font-bold"}>
               6. Making a Difference in Policy and Practice
             </span>
@@ -145,8 +145,8 @@ const scientific = () => {
         </div>
       </div>
       {/* wolf */}
-      <div className={"flex flex-wrap gap-10 py-4"}>
-        <div className="min-w-[320px] flex-1 px-4 pt-4 text-black">
+      <div className={"news-container"}>
+        <div className=" flex-1 px-4 pt-4 text-black">
           <span className={"font-bold"}>7. Creating a Permanent Record </span>
           <br />
           <span>
@@ -167,7 +167,7 @@ const scientific = () => {
             talent and funding.
           </span>
         </div>
-        <div className="left-container w-full min-w-[320px] flex-1">
+        <div className="left-container w-full  flex-1">
           <div className="w-full">
             <Image
               src={"/assets/images/random-images/home-library-with-globe.svg"}
@@ -179,8 +179,8 @@ const scientific = () => {
           </div>
         </div>
       </div>
-      <div className={"flex flex-wrap gap-10 py-4"}>
-        <div className="min-w-[320px] flex-1 px-4 pt-4 text-black">
+      <div className={"news-container"}>
+        <div className=" flex-1 px-4 pt-4 text-black">
           <span className={"font-bold"}>Final Thoughts </span>
           <br />
           <span>
@@ -193,7 +193,7 @@ const scientific = () => {
             research matters—but sharing it is what truly makes it count.
           </span>
         </div>
-        <div className="left-container w-full min-w-[320px] flex-1">
+        <div className="left-container w-full  flex-1">
           <div className="w-full">
             <Image
               src={"/assets/images/random-images/laboratory.svg"}

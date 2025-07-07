@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 // eslint-disable-next-line camelcase
 import { Inter, Roboto, Numans } from "next/font/google";
+import ZoomWrapper from "@/components/ZoomWrapper";
 
 // Inter: All weights
 const inter = Inter({
@@ -47,9 +48,9 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} ${roboto.variable} ${numans.variable} relative inset-x-0 w-full min-w-[540px]  justify-items-center  bg-white antialiased`}
+        className={`${inter.variable} ${roboto.variable} ${numans.variable} relative inset-x-0 w-full justify-items-center self-stretch  bg-white antialiased`}
       >
-        {children}
+        <ZoomWrapper>{children}</ZoomWrapper>
       </body>
     </html>
   );

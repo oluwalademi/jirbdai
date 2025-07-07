@@ -8,21 +8,17 @@ import Scientific from "@/app/readings/scientific";
 const page = () => {
   return (
     <div className="default-layout relative w-full self-stretch px-10">
-      <header>
-        <Header>
-          <div className="fixed inset-x-0 top-[145px]  bg-black px-5 py-1 text-center">
-            <span>
-              <span className="">Help shape the future of</span>
-              <span className="font-bold"> JIRBDAI</span>
-              <span className="">. Join as a</span>
-              <span className="font-bold"> VOLUNTEER writer </span>
-              <span className="">
-                and share your voice with a growing audience.
-              </span>
-            </span>
-          </div>
-        </Header>
-      </header>
+      <Header>
+        <div className="fixed inset-x-0 top-[145px] bg-black px-5 py-1 text-center">
+          <span>
+            <span>Help shape the future of</span>
+            <span className="font-bold"> JIRBDAI</span>
+            <span>. Join as a</span>
+            <span className="font-bold"> VOLUNTEER writer </span>
+            <span>and share your voice with a growing audience.</span>
+          </span>
+        </div>
+      </Header>
       <Offset height={220} color={"brand-white"} />
       <section
         className={
@@ -31,10 +27,8 @@ const page = () => {
       >
         <TopBar titleHeader={"News"} />
 
-        <div className={"flex flex-row flex-wrap justify-between gap-10"}>
-          <div className="flex-1 px-4 pt-4 text-black">
-            <Scientific />
-          </div>
+        <div className={"justify-between gap-10 text-black"}>
+          <Scientific />
         </div>
         <div
           className={"flex flex-col place-items-center gap-2 px-5 text-black"}
