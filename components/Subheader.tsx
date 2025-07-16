@@ -53,20 +53,27 @@ const Subheader = () => {
         </div>
 
         {open && (
-          <nav className="sub-header-nav-link">
-            <ul className="flex flex-1 flex-wrap items-center gap-6 ">
-              {navItems.slice(4, 9).map(({ url, name }) => (
-                <li key={name} className="lg:p-1">
-                  <Link href={url} passHref legacyBehavior>
-                    <a
-                      className={cn(
-                        "robotoflex-semibold-16 text-[1rem] lg:text-sm whitespace-nowrap hover:text-[#00C8FF]",
-                        pathname === url && "text-[#00C8FF] font-extrabold",
-                      )}
-                    >
-                      {name}
-                    </a>
-                  </Link>
+          <nav className="sub-header-nav-link hidden px-2 md:flex">
+            <ul className="flex flex-1 flex-wrap items-center gap-4 lg:gap-6">
+              {navItems.slice(4, 9).map(({ url, name, subUrl }) => (
+                <li
+                  key={name}
+                  className="robotoflex-semibold-16 whitespace-nowrap text-[1rem] lg:p-1 lg:text-sm"
+                >
+                  {subUrl ? (
+                    <DropMenu dropname={name} subUrl={subUrl} />
+                  ) : (
+                    <Link href={url} passHref legacyBehavior>
+                      <a
+                        className={cn(
+                          "robotoflex-semibold-16 text-[1rem] lg:text-sm whitespace-nowrap hover:text-brand-100",
+                          pathname === url && "text-brand-100 font-extrabold",
+                        )}
+                      >
+                        {name}
+                      </a>
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

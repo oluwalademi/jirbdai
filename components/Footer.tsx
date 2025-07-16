@@ -10,10 +10,14 @@ const Footer = () => {
         {/* Left: Text container */}
         <div className="flex flex-1 flex-col gap-1">
           <div className="text-left font-robotoflex text-base font-semibold text-[#4d4d4f]">
-            Journal of Institutional Research, Big Data Analytics and
-            Innovation.
+            <span>
+              Journal of Institutional Research, Big Data Analytics and
+              Innovation.
+            </span>
+            <br />
             <span>Copyright © 2025 JIRBDAI.</span>
           </div>
+
           <div className="flex flex-row gap-1 text-left font-robotoflex text-base font-semibold text-[#4d4d4f]">
             <Link className={"header-text"} href="/footer-ref/terms-of-usage">
               Terms of Usage
