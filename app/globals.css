@@ -31,6 +31,9 @@
   h3 {
     @apply text-black font-inter text-[1.25rem] leading-[2rem] font-extrabold uppercase;
   }
+  h4 {
+    @apply text-black font-inter text-[1.1rem] leading-[1.2rem] font-extrabold uppercase;
+  }
 }
 
 /* ========== UTILITIES ========== */
@@ -47,6 +50,10 @@
   /* ===== TYPOGRAPHY ===== */
   .h1 {
     @apply text-black font-inter text-[3.25rem] leading-[3.75rem] font-extrabold;
+  }
+
+  .h3-small {
+    @apply text-black font-inter text-[1.1rem] leading-[1.5rem] font-extrabold uppercase;
   }
 
 
@@ -155,7 +162,18 @@
     @apply font-bold text-blue-600 text-nowrap;
   }
 
+  .header-text{
+    @apply lg:robotoflex-semibold-16 text-[0.8rem] text-ash flex font-semibold whitespace-nowrap hover:text-brand-100 items-center;
+  }
+
   /* ===== COMPONENTS ===== */
+  .dropdown-tab {
+    @apply rounded px-2 py-1 bg-gray-100 text-gray-700 lg:robotoflex-semibold-16 text-[0.8rem] flex font-semibold whitespace-nowrap  items-center;
+  }
+  .dropdown-tab:hover {
+    @apply bg-ash hover:text-brand-100 font-bold !important;
+  }
+
   .article-card-template {
     @apply flex flex-col items-start justify-start gap-[10px] p-[12px_20px] min-h-[296px] max-h-[400px] w-full min-w-[320px] max-w-[1600px] flex-shrink-0 relative rounded-[4px] shadow-[0px_0px_9.8px_0px_rgba(0,0,0,0.2)];
   }

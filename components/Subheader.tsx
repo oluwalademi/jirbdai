@@ -7,6 +7,7 @@ import Search from "@/components/Search";
 import { navItems } from "@/constants";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import DropMenu from "@/components/DropdownMenu";
 
 const Subheader = () => {
   const pathname = usePathname();
@@ -20,18 +21,22 @@ const Subheader = () => {
     >
       <div className={"hidden px-2 md:flex"}>
         <ul className="flex flex-1 flex-row items-center gap-4 lg:gap-6">
-          {navItems.slice(4, 9).map(({ url, name }) => (
-            <li key={name} className="lg:p-1">
-              <Link href={url} passHref legacyBehavior>
-                <a
-                  className={cn(
-                    "lg:robotoflex-semibold-16 text-[0.8rem] text-ash font-semibold whitespace-nowrap hover:text-[#00C8FF]",
-                    pathname === url && "text-[#00C8FF] font-extrabold",
-                  )}
-                >
-                  {name}
-                </a>
-              </Link>
+          {navItems.slice(4, 9).map(({ url, name, subUrl }) => (
+            <li key={name} className="header-text lg:p-1">
+              {subUrl ? (
+                <DropMenu dropname={name} subUrl={subUrl} />
+              ) : (
+                <Link href={url} passHref legacyBehavior>
+                  <a
+                    className={cn(
+                      "header-text",
+                      pathname === url && "text-brand-100 font-extrabold",
+                    )}
+                  >
+                    {name}
+                  </a>
+                </Link>
+              )}
             </li>
           ))}
         </ul>

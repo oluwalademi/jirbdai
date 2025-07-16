@@ -103,25 +103,13 @@ const LatestIssueSection = () => {
           pages="pp. 101–110"
           doi="10.1234/abcd"
           authorIcon="/assets/images/no-user-pics.svg"
-        />{" "}
-        <ResearchArticleCard
-          title="Using AI to Predict Student Outcomes"
-          authors={[
-            "John Doe",
-            "Jane Smith",
-            "Jane Smith",
-            "Jane Smith",
-            "Jane Smith",
-            "Jane Smith",
-          ]}
-          date="June 2025"
-          articleNo="Article 12"
-          pages="pp. 101–110"
-          doi="10.1234/abcd"
-          authorIcon="/assets/images/no-user-pics.svg"
         />
       </div>
-      <ViewAllBar justify={"justify-end"} inputText="View all" />
+      <ViewAllBar
+        justify={"justify-end"}
+        inputText="View all"
+        href={"/browse"}
+      />
     </section>
   );
 };

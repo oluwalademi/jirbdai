@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Header from "@/components/Header";
 import Offset from "@/components/header/Offset";
@@ -5,37 +7,37 @@ import Footer from "@/components/Footer";
 import TopBar from "@/components/TopBar";
 import SubTopBar from "@/components/SubTopBar";
 import Image from "next/image";
-import SidebarSection from "@/components/SidebarSection";
-import Reage from "@/app/(auth)/login/page";
+// import { useSmoothHashScroll } from "@/hooks/useSmoothHashScroll";
+// import SidebarSection from "@/components/SidebarSection";
 
 const page = () => {
+  // useSmoothHashScroll(-100);
+
   return (
     <div className="default-layout ">
       <header>
         <Header />
       </header>
       <Offset height={160} color={"brand-white"} />
-
       <div className={"container mb-20"}>
         <TopBar titleHeader={"JIRBDAI' Journal Policies"} />
-        <div className="flex h-24 w-full items-center overflow-hidden">
+        <div className="flex h-24 w-full items-center">
           <Image
             src="/assets/images/random-images/tech-journal-policies-one.svg"
-            alt="man in a Laboratory doing a research Work"
+            alt="Scientist conducting research in laboratory"
             width={900}
             height={900}
-            className="h-auto w-full"
+            className="h-full w-auto object-cover"
           />
         </div>
       </div>
-
       <div className={"container text-black"}>
-        <SidebarSection title={"Section"} />
+        {/* <SidebarSection title={"Section"} /> */}
         <div>
           <div className={""}>
-            <div>
-              <br />
-              <br />
+            <br />
+            <br />
+            <div id={"ai-policy"}>
               <div className={""}>
                 <SubTopBar titleHeader={"AI Policy"} />
               </div>
@@ -172,7 +174,7 @@ const page = () => {
                 <br />
               </div>
             </div>
-            <div>
+            <div id={"editorial-review-process"}>
               <div className={""}>
                 <SubTopBar titleHeader={"Editorial Review Process"} />
               </div>
@@ -248,7 +250,7 @@ const page = () => {
                 <br />
               </div>
             </div>
-            <div>
+            <div id={"peer-review-process"}>
               <div className={""}>
                 <SubTopBar titleHeader={"Peer Review Process"} />
               </div>
@@ -358,7 +360,7 @@ const page = () => {
                 <br />
               </div>
             </div>
-            <div>
+            <div id={"publication-ethics"}>
               <div className={""}>
                 <SubTopBar titleHeader={"Publication Ethics"} />
               </div>
@@ -508,7 +510,7 @@ const page = () => {
                 <br />
               </div>
             </div>
-            <div>
+            <div id={"research-article-guideline"}>
               <div className={""}>
                 <SubTopBar titleHeader={"Research Article Guideline"} />
               </div>
@@ -682,9 +684,6 @@ const page = () => {
           </div>
         </div>
       </div>
-
-      <Reage />
-
       <Footer />
     </div>
   );

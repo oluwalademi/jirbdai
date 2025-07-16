@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -10,10 +11,21 @@ const Footer = () => {
         <div className="flex flex-1 flex-col gap-1">
           <div className="text-left font-robotoflex text-base font-semibold text-[#4d4d4f]">
             Journal of Institutional Research, Big Data Analytics and
-            Innovation. Copyright © 2025 JIRBDAI.
+            Innovation.
+            <span>Copyright © 2025 JIRBDAI.</span>
           </div>
-          <div className="text-left font-robotoflex text-base font-semibold text-[#4d4d4f]">
-            Terms of Usage | Privacy Policy | Code of Ethics
+          <div className="flex flex-row gap-1 text-left font-robotoflex text-base font-semibold text-[#4d4d4f]">
+            <Link className={"header-text"} href="/footer-ref/terms-of-usage">
+              Terms of Usage
+            </Link>
+            <span> | </span>
+            <Link className={"header-text"} href="/footer-ref/privacy-policy">
+              Privacy Policy
+            </Link>
+            <span> | </span>
+            <Link className={"header-text"} href="/footer-ref/code-of-ethics">
+              Code of Ethics
+            </Link>
           </div>
         </div>
 

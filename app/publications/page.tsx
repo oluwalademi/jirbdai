@@ -12,15 +12,18 @@ const page = () => {
       </header>
       <Offset height={160} color={"brand-white"} />
       <section className={"container flex flex-row flex-wrap gap-6"}>
-        <PublicationIssue
-          txtColor={"text-brand-100"}
-          longColor={"bg-tarawera-100"}
-          tnyColor={"bg-white"}
-          title={"Current / Maiden Issue"}
-          imgSrc={"issue-1-flyer.svg"}
-          description={"Volume 1 No. 1 (2024)"}
-          date={"September 1 - December 31st, 2025"}
-        />{" "}
+        <div className={"flex flex-1 bg-black shadow-custom-2"}>
+          <PublicationIssue
+            txtColor={"text-white"}
+            defaultTextClr={"text-white"}
+            longColor={"bg-brand-100/50"}
+            tnyColor={"bg-brand-100"}
+            title={"Current / Maiden Issue"}
+            imgSrc={"issue-1-flyer.svg"}
+            description={"Volume 1 No. 1 (2024)"}
+            date={"September 1 - December 31st, 2025"}
+          />
+        </div>{" "}
         <PublicationIssue
           title={"Issue 2"}
           imgSrc={"issue-1-flyer.svg"}

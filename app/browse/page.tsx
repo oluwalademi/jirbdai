@@ -14,16 +14,33 @@ const page = () => {
       </header>
       <Offset height={160} color={"brand-white"} />
       <section className="container flex h-auto flex-row flex-wrap justify-between gap-10">
-        <SidebarSection title={"Filter"}>
-          <div className="flex w-full flex-col">
-            <SubTopBar titleHeader={"Researchers"} />
-            <SubTopBar titleHeader={"Content Types"} />
-            <div className="text-black"> wake up </div>
-          </div>
-        </SidebarSection>
+        {/*
+          <SidebarSection title={"Filter"}>
+            <div className="flex w-full flex-col">
+              <SubTopBar titleHeader={"Researchers"} />
+              <SubTopBar titleHeader={"Content Types"} />
+              <div className="text-black"> wake up</div>
+            </div>
+          </SidebarSection> */}
 
         <div className="flex flex-1 flex-col">
-          <div className={"text-black"}>
+          <div className={"flex flex-col gap-8 text-black"}>
+            <ResearchPaperCard
+              title="Using AI to Predict Student Outcomes"
+              authors={[
+                "John Doe",
+                "Jane Smith",
+                "Jane Smith",
+                "Jane Smith",
+                "Jane Smith",
+                "Jane Smith",
+              ]}
+              date="June 2025"
+              articleNo="Article 12"
+              pages="pp. 101–110"
+              doi="10.1234/abcd"
+              authorIcon="/assets/images/no-user-pics.svg"
+            />
             <ResearchPaperCard
               title="Using AI to Predict Student Outcomes"
               authors={[

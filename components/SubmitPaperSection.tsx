@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useRef, useEffect, useState } from "react";
 
 export default function SubmitPaperSection() {
@@ -23,46 +24,41 @@ export default function SubmitPaperSection() {
   const row1AllImages = [...row1Images, ...row1Images];
   const row2AllImages = [...row2Images, ...row2Images];
 
-  const [isSmallScreen, setIsSmallScreen] = useState(false); // same on SSR and CSR
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
       setIsSmallScreen(window.innerWidth <= 1300);
     };
-
-    handleResize(); // Run once after mount
-
+    handleResize(); // Run on mount
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Scroll refs for infinite scroll
   const row1Ref = useRef<HTMLDivElement>(null);
   const row2Ref = useRef<HTMLDivElement>(null);
 
-  // Scroll reset handler only if small screen
   useEffect(() => {
     if (!isSmallScreen) return;
 
-    function resetScroll(el: HTMLDivElement | null) {
-      if (!el) return;
-      function onScroll() {
-        if (el.scrollLeft >= el.scrollWidth / 2) {
-          el.scrollLeft = 0;
-        }
-      }
-      el.addEventListener("scroll", onScroll);
-      return () => el.removeEventListener("scroll", onScroll);
-    }
+    const el1 = row1Ref.current;
+    const el2 = row2Ref.current;
 
-    const cleanupRow1 = resetScroll(row1Ref.current);
-    const cleanupRow2 = resetScroll(row2Ref.current);
+    const scrollHandler = (el: HTMLDivElement) => () => {
+      if (el.scrollLeft >= el.scrollWidth / 2) {
+        el.scrollLeft = 0;
+      }
+    };
+
+    const handler1 = el1 ? scrollHandler(el1) : undefined;
+    const handler2 = el2 ? scrollHandler(el2) : undefined;
+
+    el1?.addEventListener("scroll", handler1!);
+    el2?.addEventListener("scroll", handler2!);
 
     return () => {
-      // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-      cleanupRow1 && cleanupRow1();
-      // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-      cleanupRow2 && cleanupRow2();
+      if (handler1) el1?.removeEventListener("scroll", handler1);
+      if (handler2) el2?.removeEventListener("scroll", handler2);
     };
   }, [isSmallScreen]);
 
@@ -98,11 +94,11 @@ export default function SubmitPaperSection() {
                   height={274}
                   className="flex aspect-[258/274] w-[258px] min-w-[235px] max-w-[258px] object-cover"
                   draggable={false}
+                  loading="lazy"
                 />
               ))}
             </div>
           ) : (
-            // Fixed images, no scroll, no duplication
             <div className="flex justify-center gap-5">
               {row1Images.map((src) => (
                 <Image
@@ -113,6 +109,7 @@ export default function SubmitPaperSection() {
                   height={274}
                   className="flex aspect-[258/274] w-[258px] min-w-[235px] max-w-[258px] object-cover"
                   draggable={false}
+                  loading="lazy"
                 />
               ))}
             </div>
@@ -137,6 +134,7 @@ export default function SubmitPaperSection() {
                   height={274}
                   className="flex aspect-[258/274] w-[258px] min-w-[235px] max-w-[258px] object-cover"
                   draggable={false}
+                  loading="lazy"
                 />
               ))}
             </div>
@@ -151,6 +149,7 @@ export default function SubmitPaperSection() {
                   height={274}
                   className="flex aspect-[258/274] w-[258px] min-w-[235px] max-w-[258px] object-cover"
                   draggable={false}
+                  loading="lazy"
                 />
               ))}
             </div>
@@ -159,11 +158,11 @@ export default function SubmitPaperSection() {
 
         {/* Bottom Bar */}
         <div className="flex w-full justify-end border-t border-[#797979] bg-[#e4e2e2] px-[60px] py-3">
-          <a href={"/fields-coverage"}>
-            <div className="cursor-pointer text-sm font-semibold text-[#2c86fc]">
+          <Link href="/fields-coverage">
+            <span className="cursor-pointer text-sm font-semibold text-[#2c86fc]">
               View all Fields Coverage --&gt;
-            </div>
-          </a>
+            </span>
+          </Link>
         </div>
       </div>
     </section>

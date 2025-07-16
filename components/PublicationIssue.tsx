@@ -8,8 +8,9 @@ type Props = {
   imgSrc: string;
   description: string;
   date: string;
-  tinyColor?: string;
-  bigColor?: string;
+  defaultTextClr?: string;
+  tnyColor?: string;
+  longColor?: string;
   txtColor?: string;
 };
 
@@ -18,12 +19,17 @@ const PublicationIssue = ({
   imgSrc,
   description,
   date,
+  defaultTextClr,
   tnyColor,
   longColor,
   txtColor,
 }: Props) => {
   return (
-    <div className={"flex min-w-[395px] flex-1 flex-col gap-2 text-black"}>
+    <div
+      className={`flex min-w-[395px] flex-1 flex-col gap-2 ${
+        defaultTextClr ? `${defaultTextClr}` : "text-black"
+      }`}
+    >
       <SubTopBar
         titleHeader={title}
         tinyColor={tnyColor}
