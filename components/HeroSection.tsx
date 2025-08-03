@@ -37,23 +37,23 @@ const HeroSection = () => {
               <br />
               Important
               <br />
-              to Publishers?
+              to Academics?
             </h1>
             <div className="line-clamp-3 w-3/4 max-w-prose break-words py-6 font-inter text-base text-gray-900">
               <span className="font-bold text-black">
                 Scientific journalism
               </span>{" "}
-              is more than a communication tool — it&#39;s the foundation of
-              academic progress, professional recognition, and global knowledge{" "}
-              exchange. For authors, publishing research in peer-reviewed
-              journals is a critical step toward shaping their careers, gaining
-              credibility, and influencing both scholarly discourse and
-              real-world applications across disciplines.
+              is a vital pillar in the academic ecosystem. For researchers and
+              educators alike, it acts as a bridge between discovery and
+              dialogue, ensuring that new ideas aren’t just created—but shared,
+              challenged, and refined. Scientific publications are not just a
+              requirement—they&#39;re the currency of credibility,
+              collaboration, and career growth.
             </div>
 
             <div className="flex gap-4">
               <a href="https://jirbdai.com.ng/index.php/jirbdai/user/register">
-                <button className="btn-inter-medium-14 bg-brand">
+                <button className="btn-inter-medium-14 bg-brand text-white">
                   Click to Sign Up &gt;
                 </button>
               </a>

@@ -46,6 +46,10 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@100..900&display=swap"
           rel="stylesheet"
         />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
       </head>
       <body
         className={`${inter.variable} ${roboto.variable} ${numans.variable} relative inset-x-0 w-full justify-items-center self-stretch  bg-white antialiased`}

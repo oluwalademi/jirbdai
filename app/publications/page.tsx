@@ -11,7 +11,7 @@ const page = () => {
         <Header />
       </header>
       <Offset height={160} color={"brand-white"} />
-      <section className={"container flex flex-row flex-wrap gap-6"}>
+      <section className={"paper-issues !gap-6 !gap-y-10 !bg-white !bg-none"}>
         <div className={"flex flex-1 bg-black shadow-custom-2"}>
           <PublicationIssue
             txtColor={"text-white"}

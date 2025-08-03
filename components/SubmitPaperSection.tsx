@@ -69,7 +69,9 @@ export default function SubmitPaperSection() {
         <h2 className="font-inter text-sm font-extrabold text-black">
           Empowering your Publication Journey
         </h2>
-        <h1 className="h1 leading-tight text-black">Submit Your Paper</h1>
+        <a href={""}>
+          <h1 className="h1 leading-tight text-black">Submit Your Paper</h1>
+        </a>
       </div>
 
       {/* Paper Categories */}

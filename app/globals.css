@@ -175,10 +175,10 @@
   }
 
   .article-card-template {
-    @apply flex flex-col items-start justify-start gap-[10px] p-[12px_20px] min-h-[296px] max-h-[400px] w-full min-w-[320px] max-w-[1600px] flex-shrink-0 relative rounded-[4px] shadow-[0px_0px_9.8px_0px_rgba(0,0,0,0.2)];
+    @apply flex flex-col items-start justify-start gap-[10px] p-[12px_20px] min-h-[296px] max-h-[400px] w-full min-w-[300px] max-w-[1600px] flex-shrink-0 relative rounded-[4px] shadow-[0px_0px_9.8px_0px_rgba(0,0,0,0.2)];
   }
   .research-card-template {
-    @apply flex flex-col items-start justify-start gap-[10px] p-[12px_20px] min-h-[296px] max-h-[400px] w-full min-w-[500px] max-w-[1600px] flex-shrink-0 relative rounded-[4px] justify-center shadow-[0px_0px_9.8px_0px_rgba(0,0,0,0.2)];
+    @apply flex flex-col items-start justify-start gap-[10px] p-[12px_20px] min-h-[296px] max-h-[400px] w-full min-w-[430px] max-w-[1600px] flex-shrink-0 relative rounded-[4px] justify-center shadow-[0px_0px_9.8px_0px_rgba(0,0,0,0.2)];
   }
 
   .primary-btn {

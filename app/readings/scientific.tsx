@@ -7,37 +7,40 @@ const scientific = () => {
     <div className={"flex w-full flex-col"}>
       <div className={"py-2"}>
         <div className={"h1"}>
-          Why Is Scientific Journalism Important to Publishers ?
+          Why Is Scientific Journalism Important to Academics?
         </div>
         <div className={"p"}>
-          By <span className={"font-bold"}>Sade Wumiola</span> | 12th May, 2025
+          By <span className={"font-bold"}>Sade Wumiola</span> | 22nd July, 2025
         </div>
       </div>
+
       <div className={"my-2 w-full border-2 border-black"}></div>
+
       <div>
         <div className={"news-container"}>
-          <div className=" flex-1 px-4 pt-4 text-black">
-            <span className={"font-bold"}>Scientific journalism </span>
+          <div className="flex-1 px-4 pt-4 text-black">
+            <span className={"font-bold"}>Scientific journalism</span>
             <span>
-              is more than a communication tool — it&#39;s the foundation of
-              academic progress, professional recognition, and global knowledge
-              exchange. For authors, publishing research in peer-reviewed
-              journals is a critical step toward shaping their careers, gaining
-              credibility, and influencing both scholarly discourse and
-              real-world applications across disciplines.
+              {" "}
+              is a vital pillar in the academic ecosystem. For researchers and
+              educators alike, it acts as a bridge between discovery and
+              dialogue, ensuring that new ideas aren’t just created—but shared,
+              challenged, and refined. Scientific publications are not just a
+              requirement—they're the currency of credibility, collaboration,
+              and career growth.
             </span>
             <br />
             <br />
             <span>
-              So, why exactly is publishing in scientific journals so important
-              for authors? Let’s break it down:
+              So, why is scientific journalism so indispensable to academics?
+              Here’s what makes it essential:
             </span>
           </div>
-          <div className="left-container w-full  flex-1">
+          <div className="left-container w-full flex-1">
             <div className="w-full">
               <Image
                 src={"/assets/images/random-images/laboratory.svg"}
-                alt={"man in a Laboratory doing a research Work"}
+                alt={"Academic conducting research in a lab"}
                 width={900}
                 height={900}
                 className={"h-auto w-full"}
@@ -45,43 +48,43 @@ const scientific = () => {
             </div>
           </div>
         </div>
+
         <div className={"news-container"}>
-          <div className=" flex-1 px-4 pt-4 text-black">
-            <span className={"font-bold"}>
-              1. Sharing Knowledge with the World
-            </span>
+          <div className="flex-1 px-4 pt-4 text-black">
+            <span className={"font-bold"}>1. Advancing Academic Discourse</span>
             <br />
             <span>
-              {" "}
-              At its core, science is about discovery and sharing. Publishing
-              allows researchers to communicate their findings with the broader
-              academic community. This doesn’t just contribute to the field—it
-              builds on existing work, enables others to replicate or expand the
-              research, and drives the collective understanding forward.
+              Scientific journalism empowers academics to contribute to and
+              shape ongoing scholarly conversations. Every published work
+              becomes a building block for future research, fostering critical
+              inquiry, refinement, and innovation across disciplines.
             </span>
           </div>
         </div>
+
         <div className={"news-container"}>
-          <div className=" flex-1 px-4 pt-4 text-black">
+          <div className="flex-1 px-4 pt-4 text-black">
             <span className={"font-bold"}>
-              2. Earning Recognition and Credibility
+              2. Establishing Scholarly Identity
             </span>
             <br />
             <span>
-              A solid publication record is often the first marker of a serious
-              researcher. Publishing in reputable journals helps authors gain
-              credibility, establish themselves as experts, and open doors to
-              speaking engagements, peer-review invitations, and editorial board
-              positions.
+              Academic publishing helps researchers carve out their intellectual
+              niche. It allows them to define their expertise, demonstrate
+              mastery of specific fields, and earn recognition from peers and
+              institutions.
             </span>
           </div>
         </div>
+
         <div className={"news-container"}>
-          <div className="left-container w-full  flex-1">
+          <div className="left-container w-full flex-1">
             <div className="w-full">
               <Image
                 src={"/assets/images/random-images/award-a-trophy.svg"}
-                alt={"man in a Laboratory doing a research Work"}
+                alt={
+                  "Academic recognized with an award or publication achievement"
+                }
                 width={900}
                 height={900}
                 className={"h-auto w-full"}
@@ -89,122 +92,121 @@ const scientific = () => {
             </div>
           </div>
         </div>
+
         <div className={"news-container"}>
-          <div className=" flex-1 px-4 pt-4 text-black">
-            <span className={"font-bold"}>3. Climbing the Career Ladder</span>
-            <br />
-            <span>
-              Whether you&#39;re aiming for tenure, a research leadership role,
-              or admission to a doctoral program, publications are often
-              non-negotiable. In many institutions, publishing is tightly linked
-              to professional advancement, grant eligibility, and academic
-              qualifications.
-            </span>
-          </div>
-        </div>
-        <div className={"news-container"}>
-          <div className=" flex-1 px-4 pt-4 text-black">
+          <div className="flex-1 px-4 pt-4 text-black">
             <span className={"font-bold"}>
-              4. Attracting Funding and Collaborations{" "}
-            </span>
-            <span>
-              Funding bodies and research partners don’t just look at ideas—they
-              look at track records. A strong portfolio of publications signals
-              research productivity, relevance to real-world challenges, and the
-              ability to deliver meaningful results.
-            </span>
-          </div>
-        </div>
-        <div className={"news-container"}>
-          <div className=" flex-1 px-4 pt-4 text-black">
-            <span className={"font-bold"}>
-              5. Contributing to the Scientific Conversation
+              3. Driving Teaching and Curriculum
             </span>
             <br />
             <span>
-              When other researchers cite your work, it’s a clear sign your
-              ideas are resonating. High citation counts boost your h-index and
-              overall impact, which can influence everything from job prospects
-              to institutional rankings.
+              Publications often influence what’s taught in lecture halls and
+              how. Academics rely on peer-reviewed articles to support course
+              content, update theories, and challenge outdated narratives,
+              ensuring students receive the most relevant and research-informed
+              education.
             </span>
           </div>
         </div>
+
         <div className={"news-container"}>
-          <div className=" flex-1 px-4 pt-4 text-black">
+          <div className="flex-1 px-4 pt-4 text-black">
             <span className={"font-bold"}>
-              6. Making a Difference in Policy and Practice
+              4. Enhancing Global Collaboration
             </span>
             <br />
             <span>
-              In many fields, published research extends far beyond the lab or
-              lecture hall. It can shape public policy, inform clinical
-              practices, guide industry innovation, and support evidence-based
-              decision-making.
+              Journals serve as a global stage where ideas transcend borders.
+              Academics can discover peers working on similar challenges,
+              leading to international collaborations, joint publications, and
+              knowledge-sharing that accelerates collective progress.
             </span>
           </div>
         </div>
-      </div>
-      {/* wolf */}
-      <div className={"news-container"}>
-        <div className=" flex-1 px-4 pt-4 text-black">
-          <span className={"font-bold"}>7. Creating a Permanent Record </span>
-          <br />
-          <span>
-            Scientific publications are more than temporary news—they’re
-            permanent, citable records that preserve your ideas, results, and
-            intellectual contributions for future generations of scholars.
-          </span>
-          <br />
-          <br />
-          <span className={"font-bold"}>
-            8. Building Prestige—for You and Your Institution
-          </span>
-          <br />
-          <span>
-            There’s also the personal satisfaction and prestige that comes from
-            being published. For institutions, high-quality research output can
-            enhance reputation, improve global rankings, and attract top-tier
-            talent and funding.
-          </span>
+
+        <div className={"news-container"}>
+          <div className="flex-1 px-4 pt-4 text-black">
+            <span className={"font-bold"}>
+              5. Supporting Tenure and Promotion
+            </span>
+            <br />
+            <span>
+              In academia, the publish-or-perish culture is real. Scientific
+              publishing is central to promotion criteria, tenure reviews, and
+              grant applications. It proves sustained research activity and
+              academic engagement.
+            </span>
+          </div>
         </div>
-        <div className="left-container w-full  flex-1">
-          <div className="w-full">
-            <Image
-              src={"/assets/images/random-images/home-library-with-globe.svg"}
-              alt={"home library with globe"}
-              width={900}
-              height={900}
-              className={"h-auto w-full"}
-            />
+
+        <div className={"news-container"}>
+          <div className="flex-1 px-4 pt-4 text-black">
+            <span className={"font-bold"}>
+              6. Inspiring Students and Emerging Researchers
+            </span>
+            <br />
+            <span>
+              Published work sets an example for students and aspiring scholars.
+              It illustrates research rigor, writing excellence, and the
+              importance of evidence-based thinking—often inspiring the next
+              generation of academic thinkers.
+            </span>
+          </div>
+        </div>
+
+        <div className={"news-container"}>
+          <div className="flex-1 px-4 pt-4 text-black">
+            <span className={"font-bold"}>
+              7. Shaping Societal Impact from the Ivory Tower
+            </span>
+            <br />
+            <span>
+              Scientific journalism isn’t just for academics. Many articles lead
+              to practical applications that affect communities, industries, and
+              policymaking. Publishing allows academics to push knowledge beyond
+              the campus and into the real world.
+            </span>
+          </div>
+          <div className="left-container w-full flex-1">
+            <div className="w-full">
+              <Image
+                src={"/assets/images/random-images/home-library-with-globe.svg"}
+                alt={"Impact of academic knowledge on global society"}
+                width={900}
+                height={900}
+                className={"h-auto w-full"}
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className={"news-container"}>
+          <div className="flex-1 px-4 pt-4 text-black">
+            <span className={"font-bold"}>Final Thoughts</span>
+            <br />
+            <span>
+              For academics, scientific journalism is more than a formal
+              obligation— it’s a statement of purpose. Through publishing, they
+              share hard-won insights, drive intellectual discourse, and help
+              shape the world. Whether guiding students, influencing peers, or
+              advancing policy, publishing is the powerful thread that weaves
+              together all academic impact.
+            </span>
+          </div>
+          <div className="left-container w-full flex-1">
+            <div className="w-full">
+              <Image
+                src={"/assets/images/random-images/laboratory.svg"}
+                alt={"Scientist reflecting in laboratory on published impact"}
+                width={900}
+                height={900}
+                className={"h-auto w-full"}
+              />
+            </div>
           </div>
         </div>
       </div>
-      <div className={"news-container"}>
-        <div className=" flex-1 px-4 pt-4 text-black">
-          <span className={"font-bold"}>Final Thoughts </span>
-          <br />
-          <span>
-            Final Thoughts Scientific publishing is not just about ticking boxes
-            or chasing metrics. It’s about contributing to a global
-            conversation, shaping the future of knowledge, and establishing a
-            lasting legacy. For researchers, each publication is a stepping
-            stone toward influence, innovation, and academic excellence. Whether
-            you’re a seasoned scientist or an emerging scholar, remember: your
-            research matters—but sharing it is what truly makes it count.
-          </span>
-        </div>
-        <div className="left-container w-full  flex-1">
-          <div className="w-full">
-            <Image
-              src={"/assets/images/random-images/laboratory.svg"}
-              alt={"Laboratory"}
-              width={900}
-              height={900}
-              className={"h-auto w-full"}
-            />
-          </div>
-        </div>
-      </div>
+
       <Offset height={120} color={"brand-white"} />
 
       <div className="relative">

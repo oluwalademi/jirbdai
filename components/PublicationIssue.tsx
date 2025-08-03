@@ -26,7 +26,7 @@ const PublicationIssue = ({
 }: Props) => {
   return (
     <div
-      className={`flex min-w-[395px] flex-1 flex-col gap-2 ${
+      className={`hover:border-black-2 flex flex-1 shrink-0 flex-col gap-2 border border-transparent hover:shadow-custom-2 ${
         defaultTextClr ? `${defaultTextClr}` : "text-black"
       }`}
     >

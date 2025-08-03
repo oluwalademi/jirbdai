@@ -17,7 +17,7 @@ const BibliometricsData = () => {
     }
   };
   const metrics = [
-    { label: "Publication Years", value: "2022 - 2025", bg: "bg-gray-500" },
+    { label: "Publication Years", value: "2024 - 2025", bg: "bg-gray-500" },
     { label: "Publication Count", value: "85", bg: "bg-[#6e227d]" },
     { label: "Available for Download", value: "200", bg: "bg-[#0d6601]" },
     { label: "Downloads (cumulative)", value: "20", bg: "bg-[#8d3c3c]" },

@@ -33,7 +33,17 @@ export const navItems = [
   {
     name: "Publications",
     icon: "/assets/icons/images.svg",
-    url: "/publications",
+    url: "",
+    subUrl: [
+      {
+        name: "All Issues",
+        url: "/publications",
+      },
+      {
+        name: "Submission",
+        url: "/submission",
+      },
+    ],
   },
   {
     name: "Journal Policies",
