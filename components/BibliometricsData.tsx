@@ -16,8 +16,7 @@ export default async function BibliometricsData() {
   try {
     // Issues
     const issuesRes = await ojs.issues.list();
-    const issues = issuesRes.items ?? issuesRes; // normalize just in case
-    console.log("issues", issues);
+    const issues = issuesRes.items ?? issuesRes;
 
     // Submissions
     const { items: submissions } = await ojs.submissions.list();

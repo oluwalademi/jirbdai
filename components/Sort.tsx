@@ -30,15 +30,14 @@ const Sort = () => {
     const params = new URLSearchParams(searchParams.toString());
     params.set("orderBy", orderBy);
     params.set("orderDirection", orderDirection);
-    console.log(params, "params");
 
     router.push(`${path}?${params.toString()}`);
   };
 
   return (
-    <div className="relative inline-block border-2  border-blue-400/50">
+    <div className="relative inline-block border-2 border-blue-400/50">
       <select
-        defaultValue={`${sortTypes[0].orderBy}:${sortTypes[0].value}`}
+        value={selected} // ✅ controlled input
         onChange={handleChange}
         className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-black shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
       >
