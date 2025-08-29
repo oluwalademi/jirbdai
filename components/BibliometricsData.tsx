@@ -1,89 +1,100 @@
-"use client";
+import { createOjsClient } from "@/lib/ojs";
+import BibliometricsScroll from "./BibliometricsScroll";
 
-import React, { useRef } from "react";
-import Image from "next/image";
+export default async function BibliometricsData() {
+  const ojs = createOjsClient();
 
-const BibliometricsData = () => {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const scrollLeft = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: -200, behavior: "smooth" });
-    }
-  };
+  let pubYears = "2024 - 2025"; // fallback
+  let pubCount = "85";
+  let availDownload = "200";
+  const dlCumulative = "670";
+  const dl6Weeks = "40";
+  const dlYear = "190";
+  const avgCitations = "7";
+  const avgDownloads = "53";
 
-  const scrollRight = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: 200, behavior: "smooth" });
-    }
-  };
+  try {
+    // Issues
+    const issuesRes = await ojs.issues.list();
+    const issues = issuesRes.items ?? issuesRes; // normalize just in case
+    console.log("issues", issues);
+
+    // Submissions
+    const { items: submissions, total } = await ojs.submissions.list();
+    pubCount = `${submissions.length}`;
+
+    const availableForDownload = submissions.filter((s: any) =>
+      s.publications?.some((p: any) => p.galleys && p.galleys.length > 0),
+    ).length;
+    availDownload = `${availableForDownload}`;
+
+    /* dlCumulative = `${publications.reduce(
+      (sum: number, pub: any) => sum + (pub.totalDownloads ?? 0),
+      0,
+    ) }` */ // Downloads (last 6 weeks)
+    /* const sixWeeksAgo = new Date();
+    sixWeeksAgo.setDate(sixWeeksAgo.getDate() - 42);
+    const start = sixWeeksAgo.toISOString().split("T")[0];
+    const end = new Date().toISOString().split("T")[0];
+
+    const last6Weeks = await ojs.stats.publications(
+      `dateStart=${start}&dateEnd=${end}`,
+    );
+    dl6Weeks = `${last6Weeks.reduce(
+      (sum: number, pub: any) => sum + (pub.totalDownloads ?? 0),
+      0,
+    )}`;
+
+    // Downloads (this year)
+    const yearStart = `${new Date().getFullYear()}-01-01`;
+    const yearEnd = `${new Date().getFullYear()}-12-31`;
+
+    const thisYear = await ojs.stats.publications(
+      `dateStart=${yearStart}&dateEnd=${yearEnd}`,
+    );
+    dlYear = `${thisYear.reduce(
+      (sum: number, pub: any) => sum + (pub.totalDownloads ?? 0),
+      0,
+    )}`; */
+
+    // Years
+    const years = [
+      ...new Set(issues.map((issue: any) => Number(issue.year))),
+    ].sort((a, b) => a - b);
+
+    if (years.length === 1) pubYears = `${years[0]}`;
+    else if (years.length > 1)
+      pubYears = `${years[0]} - ${years[years.length - 1]}`;
+  } catch (err) {
+    console.error("Error fetching bibliometrics:", err);
+  }
+
   const metrics = [
-    { label: "Publication Years", value: "2024 - 2025", bg: "bg-gray-500" },
-    { label: "Publication Count", value: "85", bg: "bg-[#6e227d]" },
-    { label: "Available for Download", value: "200", bg: "bg-[#0d6601]" },
-    { label: "Downloads (cumulative)", value: "20", bg: "bg-[#8d3c3c]" },
-    { label: "Downloads (6 weeks)", value: "20", bg: "bg-[#8d673c]" },
-    { label: "Downloads (year)", value: "47", bg: "bg-[#5d1c1c]" },
-    { label: "Average Citations per Article", value: "5", bg: "bg-[#483c8d]" },
-    { label: "Average Downloads per Article", value: "53", bg: "bg-[#3c8d8d]" },
+    { label: "Publication Years", value: pubYears, bg: "bg-gray-500" },
+    { label: "Publication Count", value: pubCount, bg: "bg-[#6e227d]" },
+    {
+      label: "Available for Download",
+      value: availDownload,
+      bg: "bg-[#0d6601]",
+    },
+    {
+      label: "Downloads (cumulative)",
+      value: dlCumulative,
+      bg: "bg-[#8d3c3c]",
+    },
+    { label: "Downloads (6 weeks)", value: dl6Weeks, bg: "bg-[#8d673c]" },
+    { label: "Downloads (year)", value: dlYear, bg: "bg-[#5d1c1c]" },
+    {
+      label: "Average Citations per Article",
+      value: avgCitations,
+      bg: "bg-[#483c8d]",
+    },
+    {
+      label: "Average Downloads per Article",
+      value: avgDownloads,
+      bg: "bg-[#3c8d8d]",
+    },
   ];
 
-  return (
-    <section className="relative flex w-full flex-row items-center justify-items-start overflow-x-hidden p-0">
-      <button
-        onClick={scrollLeft}
-        className={
-          "absolute inset-y-0 left-5 content-center bg-ash bg-opacity-80  lg:hidden"
-        }
-      >
-        <Image
-          src={"/assets/images/direction.png"}
-          alt={"direction"}
-          width={"28"}
-          height={"28"}
-          className={"rotate-180"}
-        />
-      </button>
-      <button
-        onClick={scrollRight}
-        className={
-          "absolute inset-y-0 right-0 content-center bg-ash bg-opacity-80  lg:hidden"
-        }
-      >
-        <Image
-          src={"/assets/images/direction.png"}
-          alt={"direction"}
-          width={"28"}
-          height={"28"}
-        />
-      </button>
-      {/* Vertical "Bibliometrics" Label */}
-      <div className="flex h-[155px] w-[20px] items-center justify-center bg-black">
-        <div className="-rotate-90 whitespace-nowrap text-xs font-bold text-white">
-          Bibliometrics
-        </div>
-      </div>
-
-      <div
-        ref={scrollRef}
-        className={
-          "scrollbar-hidden flex w-full flex-row items-center justify-items-start overflow-x-auto"
-        }
-      >
-        {/* Stats Blocks */}
-        {metrics.map((item, i) => (
-          <div
-            key={i}
-            className={`flex size-[155px] shrink-0 flex-col place-content-center items-center text-white lg:flex-1 ${item.bg}`}
-          >
-            <div className="px-1 text-center text-xs font-bold leading-tight">
-              {item.label}
-            </div>
-            <div className="mt-2 font-numans text-lg">{item.value}</div>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-};
-
-export default BibliometricsData;
+  return <BibliometricsScroll metrics={metrics} />;
+}

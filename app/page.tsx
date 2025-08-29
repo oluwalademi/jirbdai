@@ -15,10 +15,9 @@ export default function Home() {
       </header>
       <Offset height={150} color={"brand-gradient"} />
       <HeroSection />
-      <JournalHighlight />
       <BibliometricsData />
       <SubmitPaperSection />
-      <LatestIssueSection />
+      {<LatestIssueSection />}
       <Footer />
     </div>
   );

@@ -19,15 +19,15 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-row gap-1 text-left font-robotoflex text-base font-semibold text-[#4d4d4f]">
-            <Link className={"header-text"} href="/footer-ref/terms-of-usage">
+            <Link className={"header-text"} href="/terms-of-usage">
               Terms of Usage
             </Link>
             <span> | </span>
-            <Link className={"header-text"} href="/footer-ref/privacy-policy">
+            <Link className={"header-text"} href="/privacy-policy">
               Privacy Policy
             </Link>
             <span> | </span>
-            <Link className={"header-text"} href="/footer-ref/code-of-ethics">
+            <Link className={"header-text"} href="/code-of-ethics">
               Code of Ethics
             </Link>
           </div>

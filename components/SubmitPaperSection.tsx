@@ -69,7 +69,7 @@ export default function SubmitPaperSection() {
         <h2 className="font-inter text-sm font-extrabold text-black">
           Empowering your Publication Journey
         </h2>
-        <a href={""}>
+        <a href={"https://jirbdai.com.ng/index.php/jirbdai/about/submissions"}>
           <h1 className="h1 leading-tight text-black">Submit Your Paper</h1>
         </a>
       </div>

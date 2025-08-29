@@ -25,11 +25,8 @@ const DropMenu = ({ dropname, subUrl }: Props) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <DropdownMenu open={open} onOpenChange={setOpen}>
-      <DropdownMenuTrigger
-        onClick={() => setOpen(!open)}
-        className="flex flex-row place-items-center items-baseline gap-1 whitespace-nowrap"
-      >
+    <DropdownMenu modal={false} open={open} onOpenChange={setOpen}>
+      <DropdownMenuTrigger className="flex flex-row place-items-center items-baseline gap-1 whitespace-nowrap">
         {dropname}
         <Image
           src="/assets/icons/droparrow.png"

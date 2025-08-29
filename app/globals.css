@@ -28,6 +28,9 @@
     background: var(--background);
     font-family: Arial, Helvetica, sans-serif;
   }
+  body[data-scroll-locked][data-scroll-locked] {
+    overflow: auto !important;
+  }
   h3 {
     @apply text-black font-inter text-[1.25rem] leading-[2rem] font-extrabold uppercase;
   }
