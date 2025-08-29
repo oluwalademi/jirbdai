@@ -20,7 +20,7 @@ export default async function BibliometricsData() {
     console.log("issues", issues);
 
     // Submissions
-    const { items: submissions, total } = await ojs.submissions.list();
+    const { items: submissions } = await ojs.submissions.list();
     pubCount = `${submissions.length}`;
 
     const availableForDownload = submissions.filter((s: any) =>
@@ -60,7 +60,7 @@ export default async function BibliometricsData() {
     // Years
     const years = [
       ...new Set(issues.map((issue: any) => Number(issue.year))),
-    ].sort((a, b) => a - b);
+    ].sort((a: any, b: any) => a - b);
 
     if (years.length === 1) pubYears = `${years[0]}`;
     else if (years.length > 1)
