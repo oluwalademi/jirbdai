@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -25,6 +26,8 @@ const ResearchArticleCard: React.FC<Props> = ({
 }) => {
   const dotIcon = "/assets/images/dot.svg";
 
+  const [showAll, setShowAll] = useState(false);
+  const visibleAuthors = showAll ? authors : authors.slice(0, 3);
   return (
     <Link href={`/doi/${link}`}>
       <div className="article-card-template">
@@ -40,37 +43,47 @@ const ResearchArticleCard: React.FC<Props> = ({
             {title}
           </div>
         </div>
-
         {/* Author Section */}
-        <div className="author-container container  flex !min-h-[138px] w-full flex-col gap-x-4 gap-y-2">
-          {authors.slice(0, 3).map((author, i) => (
-            <div
-              key={i}
-              className="flex flex-row items-center gap-x-4 font-inter text-sm font-semibold text-black"
-            >
-              <Image
-                src={authorIcon}
-                alt="Date"
-                width={6}
-                height={6}
-                className={"size-7 object-contain"}
-              />
-              {author} ,
-            </div>
-          ))}
+        {visibleAuthors.map((author, i) => (
+          <div
+            key={i}
+            className="flex flex-row items-center gap-x-4 font-inter text-sm font-semibold text-black"
+          >
+            <Image
+              src={authorIcon}
+              alt="Author"
+              width={20}
+              height={20}
+              className="size-7 object-contain"
+            />
+            {author}
+          </div>
+        ))}
 
-          {authors.length > 2 && (
-            <a href={""}>
-              <div
-                className={
-                  "text-nowrap rounded-[8px] border-2 bg-gray-300 px-2 py-1 text-sm text-black"
-                }
-              >
-                +{authors.length - 2} more{" "}
-              </div>
-            </a>
-          )}
-        </div>
+        {authors.length > 3 && !showAll && (
+          <button
+            type="button"
+            onClick={(e) => {
+              e.preventDefault(); // prevents triggering parent Link
+              setShowAll(true);
+            }}
+            className="text-nowrap rounded-[8px] border-2 bg-gray-300 px-2 py-1 text-sm text-black hover:bg-gray-400"
+          >
+            +{authors.length - 3} more
+          </button>
+        )}
+        {authors.length > 3 && showAll && (
+          <button
+            type="button"
+            onClick={(e) => {
+              e.preventDefault(); // prevents triggering parent Link
+              setShowAll(false);
+            }}
+            className="text-nowrap rounded-[8px] border-2 bg-gray-300 px-2 py-1 text-sm text-black hover:bg-gray-400"
+          >
+            show less
+          </button>
+        )}
         <div className={"h-1/5"}></div>
         {/* Details Section */}
         <div className="flex flex-row flex-wrap items-start justify-start gap-x-2 gap-y-4 p-1 text-ash">
