@@ -70,10 +70,12 @@ export const createOjsClient = () => {
           offset = 0,
           orderBy?: string,
           orderDirection?: string,
+          issueIds?: string,
         ) => {
           const params: Record<string, any> = { count, offset };
           if (orderBy) params.orderBy = orderBy;
           if (orderDirection) params.orderDirection = orderDirection;
+          if (issueIds) params.issueIds = issueIds;
 
           return request(`/submissions`, { params });
         },

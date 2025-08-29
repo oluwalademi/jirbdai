@@ -17,6 +17,7 @@ interface PageProps {
 
 const page = async ({ searchParams }: PageProps) => {
   const path = "/browse";
+  const issuesIds = ((await searchParams)?.issueIds as string) || "";
   const limit = ((await searchParams)?.count as string) || "";
   const currentPage = ((await searchParams)?.page as string) || "";
   const orderBy = ((await searchParams)?.orderBy as string) || "";
@@ -31,6 +32,7 @@ const page = async ({ searchParams }: PageProps) => {
     offset,
     orderBy,
     orderDirection,
+    issuesIds,
   );
   const totalResult = total;
   const arraySubmissions = items.map((submission: any) => ({
@@ -51,7 +53,7 @@ const page = async ({ searchParams }: PageProps) => {
   );
 
   return (
-    <div className="default-layout !px-8">
+    <div className="default-layout">
       <header>
         <Header />
       </header>
@@ -86,9 +88,11 @@ const page = async ({ searchParams }: PageProps) => {
                     "flex h-full items-center bg-brand/20 px-2 font-roboto font-black text-curiousblue"
                   }
                 >
-                  RESULTS:
+                  RESULTS
                 </div>
-                <span className={"pl-1"}>PAGE {pageNumber}</span>
+                <span className={"pl-1 text-sm"}>
+                  PAGE {pageNumber} <span className={"text-xl"}>/ 5</span>
+                </span>
               </div>
               <div className={"flex pr-2"}>
                 showing list {offset + 1} - {totalResult} of results
@@ -97,22 +101,9 @@ const page = async ({ searchParams }: PageProps) => {
             {/* This is a lower */}
             <div
               className={
-                "flex h-fit  flex-row items-center !justify-between px-2 py-0.5"
+                "flex h-fit  flex-row items-center  justify-end px-1 py-0.5"
               }
             >
-              <div className={"flex flex-row"}>
-                {pageNumber > 1 && (
-                  <a href={`/browse?page=${pageNumber - 1}&count=${perPage}`}>
-                    Prev
-                  </a>
-                )}
-                {/* <span>Page {pageNumber}</span> */}
-                {pageNumber * perPage < totalResult && (
-                  <a href={`/browse?page=${pageNumber + 1}&count=${perPage}`}>
-                    Next
-                  </a>
-                )}
-              </div>
               <div className={"flex h-full  items-center"}>
                 <PaginationControls />
                 <div className={"mx-3 h-4/5 w-0.5 bg-black font-black"}></div>
@@ -122,7 +113,7 @@ const page = async ({ searchParams }: PageProps) => {
               </div>
             </div>
           </div>
-          <ul className={"flex flex-col gap-8 text-black"}>
+          <ul className={"flex flex-col gap-8 px-10 text-black"}>
             {fetchArticles.map((article: any, i: any) => {
               const cleanAbstract = stripHtml(
                 article.abstract?.en || "",
@@ -134,21 +125,39 @@ const page = async ({ searchParams }: PageProps) => {
                   .map((name: string) => name.trim()) || [];
 
               return (
-                <ResearchPaperCard
-                  key={i}
-                  id={article.id}
-                  title={article.fullTitle?.en || "Untitled"}
-                  authors={authors}
-                  date={formattedDate(article.datePublished)}
-                  articleNo={`Article ${article.id}`}
-                  pages={article.pages}
-                  description={cleanAbstract}
-                  doi={doiObject(article.doiNumber)}
-                  authorIcon="/assets/images/no-user-pics.svg"
-                />
+                <li key={article?.id || i} className="list-none">
+                  <ResearchPaperCard
+                    key={i}
+                    id={article.id}
+                    title={article.title?.en || "Untitled"}
+                    authors={authors}
+                    date={formattedDate(article.datePublished)}
+                    articleNo={`Article ${article.id}`}
+                    pages={article.pages}
+                    description={cleanAbstract}
+                    doi={doiObject(article.doiNumber)}
+                    authorIcon="/assets/images/no-user-pics.svg"
+                  />
+                </li>
               );
             })}
           </ul>
+          <Offset height={40} color={"brand-white"} />
+          <div
+            className={"flex flex-row justify-center self-stretch text-black"}
+          >
+            {pageNumber > 1 && (
+              <a href={`/browse?page=${pageNumber - 1}&count=${perPage}`}>
+                Prev
+              </a>
+            )}
+            {/* <span>Page {pageNumber}</span> */}
+            {pageNumber * perPage < totalResult && (
+              <a href={`/browse?page=${pageNumber + 1}&count=${perPage}`}>
+                Next
+              </a>
+            )}
+          </div>
         </div>
       </section>
       <Footer />

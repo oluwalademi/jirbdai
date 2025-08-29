@@ -6,7 +6,7 @@ const PaginationControls = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  const currentLimit = searchParams.get("count");
+  const currentLimit = searchParams.get("count") || "10";
 
   const handleClick = (limit: number) => {
     const params = new URLSearchParams(searchParams.toString());
@@ -17,9 +17,10 @@ const PaginationControls = () => {
   return (
     <div className="flex items-center gap-1 text-black/80">
       <span>limit per page:</span>
-      {[1, 20, 50].map((num) => (
+      {[10, 20, 50].map((num) => (
         <button
           key={num}
+          defaultValue={10}
           onClick={() => handleClick(num)}
           className={`rounded px-2 py-1 font-numans ${
             currentLimit === String(num)

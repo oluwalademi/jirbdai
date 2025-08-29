@@ -37,7 +37,7 @@ const ResearchPaperCard: React.FC<Props> = ({
   return (
     <a
       onClick={handleClick}
-      className="research-card-template flex cursor-pointer flex-col"
+      className="research-card-template flex cursor-pointer flex-col border-2 border-black/25"
     >
       {/* Header Section */}
       <div className="w-full justify-start p-0">

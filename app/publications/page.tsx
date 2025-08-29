@@ -14,6 +14,7 @@ const page = () => {
       <section className={"paper-issues !gap-6 !gap-y-10 !bg-white !bg-none"}>
         <div className={"flex flex-1 bg-black shadow-custom-2"}>
           <PublicationIssue
+            link={"/browse?issueIds=2"}
             txtColor={"text-white"}
             defaultTextClr={"text-white"}
             longColor={"bg-brand-100/50"}
