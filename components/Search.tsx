@@ -1,16 +1,41 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { Input } from "@/components/ui/input";
 
-const Search = () => {
+interface SearchProps {
+  onUserActive: (active: boolean) => void;
+}
+
+const Search: React.FC<SearchProps> = ({ onUserActive }) => {
+  const [startedTyping, setStartedTyping] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!startedTyping) {
+      setStartedTyping(true);
+      onUserActive(true); // ✅ notify parent
+    }
+  };
+
+  const handleFocus = () => {
+    if (!startedTyping) {
+      onUserActive(true); // ✅ notify parent when clicked
+    }
+  };
+
+  const handleBlur = () => {
+    onUserActive(false);
+  };
   return (
     <div className="w-full max-w-md">
       <div className="relative rounded-[32px] bg-[#2c526f]">
         <Input
           placeholder="Search JIRBDAI library"
-          className=" h-[52px] bg-[#2c526f] px-6 pr-10 text-xs text-white  placeholder:text-white/40"
+          onChange={handleChange}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          className="h-[52px] bg-[#2c526f] px-6 pr-10 text-white placeholder:text-white/40"
         />
         <Image
           src="/assets/images/search-pics.png"
