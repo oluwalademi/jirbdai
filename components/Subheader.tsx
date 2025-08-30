@@ -17,10 +17,9 @@ const Subheader = () => {
   return (
     <div
       className={
-        "flex h-16 flex-row items-center justify-between gap-x-20 border-b-2 px-20 py-2 mol:gap-x-10 mol:px-10"
+        "flex h-16 w-full flex-row items-center justify-between gap-x-20 border-b-2 px-20 py-2 mol:gap-x-10 mol:px-10"
       }
     >
-      <div className={"text-lg font-bold text-black"}>{userActive}</div>
       {!userActive && (
         <div>
           <div className={"hidden px-2 md:flex"}>

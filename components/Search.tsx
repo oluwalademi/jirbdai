@@ -20,15 +20,19 @@ const Search: React.FC<SearchProps> = ({ onUserActive }) => {
 
   const handleFocus = () => {
     if (!startedTyping) {
+      setStartedTyping(true);
       onUserActive(true); // ✅ notify parent when clicked
     }
   };
 
   const handleBlur = () => {
+    setStartedTyping(false);
     onUserActive(false);
   };
+  const divinTxt = startedTyping ? "w-full" : "w-full max-w-md";
+
   return (
-    <div className="w-full max-w-md">
+    <div className={`${divinTxt}`}>
       <div className="relative rounded-[32px] bg-[#2c526f]">
         <Input
           placeholder="Search JIRBDAI library"
