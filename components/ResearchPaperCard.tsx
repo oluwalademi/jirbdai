@@ -35,10 +35,7 @@ const ResearchPaperCard: React.FC<Props> = ({
   };
 
   return (
-    <a
-      onClick={handleClick}
-      className="research-card-template flex cursor-pointer flex-col border-2 border-black/25"
-    >
+    <div className="research-card-template flex flex-col border-2 border-black/25">
       {/* Header Section */}
       <div className="w-full justify-start p-0">
         <div className={"flex w-full flex-row justify-between"}>
@@ -59,9 +56,11 @@ const ResearchPaperCard: React.FC<Props> = ({
             />
           </div>
         </div>
-        <div className="text-[18px] font-semibold text-curiousblue">
-          {title}
-        </div>
+        <a onClick={handleClick}>
+          <div className="cursor-pointer text-[18px] font-semibold text-curiousblue">
+            {title}
+          </div>
+        </a>
       </div>
 
       {/* Author Section */}
@@ -109,7 +108,7 @@ const ResearchPaperCard: React.FC<Props> = ({
           <div
             onClick={() => setShowAll(!showAll)}
             className={
-              "ml-3 h-fit cursor-pointer text-nowrap rounded-[8px] border-2 bg-gray-300 p-1 text-sm text-black"
+              "ml-3 h-fit cursor-pointer text-nowrap rounded-[8px] border-2 bg-gray-300 p-1 text-sm text-black "
             }
           >
             {showAll ? "show less" : `show ${authors.length - 2} more`}
@@ -138,7 +137,7 @@ const ResearchPaperCard: React.FC<Props> = ({
       <div className="line-clamp-4 min-h-[6em] font-medium">
         {description || "no description"}
       </div>
-    </a>
+    </div>
   );
 };
 

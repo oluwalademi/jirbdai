@@ -22,6 +22,7 @@ const page = async ({ searchParams }: PageProps) => {
   const currentPage = ((await searchParams)?.page as string) || "";
   const orderBy = ((await searchParams)?.orderBy as string) || "";
   const orderDirection = ((await searchParams)?.orderDirection as string) || "";
+  const searchPhrase = ((await searchParams)?.searchPhrase as string) || "";
 
   const perPage = Number(limit) || 10;
   const pageNumber = Number(currentPage) || 1;
@@ -33,8 +34,12 @@ const page = async ({ searchParams }: PageProps) => {
     orderBy,
     orderDirection,
     issuesIds,
+    searchPhrase,
   );
+
   const totalResult = total;
+  const maxPages = Math.ceil(totalResult / perPage);
+
   const arraySubmissions = items.map((submission: any) => ({
     submissionId: submission.id,
     publicationId: submission.publications?.[0]?.id,
@@ -91,7 +96,8 @@ const page = async ({ searchParams }: PageProps) => {
                   RESULTS
                 </div>
                 <span className={"pl-1 text-sm"}>
-                  PAGE {pageNumber} <span className={"text-xl"}>/ 5</span>
+                  PAGE {pageNumber}{" "}
+                  <span className={"text-xl"}>/ {maxPages}</span>
                 </span>
               </div>
               <div className={"flex pr-2"}>

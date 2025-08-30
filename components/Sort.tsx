@@ -10,7 +10,7 @@ const Sort = () => {
   const searchParams = useSearchParams();
 
   const orderBy = searchParams.get("orderBy") || "datePublished";
-  const orderDirection = searchParams.get("orderDirection") || "DESC";
+  const orderDirection = searchParams.get("orderDirection") || "ASC";
 
   // Encode orderBy + orderDirection as a single string
   const currentSort = `${orderBy}:${orderDirection}`;

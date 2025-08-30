@@ -3,25 +3,43 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { Input } from "@/components/ui/input";
+import { useRouter, useSearchParams } from "next/navigation";
 
 interface SearchProps {
   onUserActive: (active: boolean) => void;
 }
 
 const Search: React.FC<SearchProps> = ({ onUserActive }) => {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const searchPhrase = searchParams.get("searchPhrase") || "";
+
   const [startedTyping, setStartedTyping] = useState(false);
+  const [inputValue, setInputValue] = useState(searchPhrase);
+
+  const handleClick = (takeText: string) => {
+    const params = new URLSearchParams(searchParams.toString());
+    if (!takeText.trim()) {
+      params.delete("searchPhrase");
+    } else {
+      params.set("searchPhrase", takeText);
+    }
+
+    router.push(`?${params.toString()}`);
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(e.target.value);
     if (!startedTyping) {
       setStartedTyping(true);
-      onUserActive(true); // ✅ notify parent
+      onUserActive(true);
     }
   };
 
   const handleFocus = () => {
     if (!startedTyping) {
       setStartedTyping(true);
-      onUserActive(true); // ✅ notify parent when clicked
+      onUserActive(true);
     }
   };
 
@@ -29,6 +47,13 @@ const Search: React.FC<SearchProps> = ({ onUserActive }) => {
     setStartedTyping(false);
     onUserActive(false);
   };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      handleClick(inputValue);
+    }
+  };
+
   const divinTxt = startedTyping ? "w-full" : "w-full max-w-md";
 
   return (
@@ -36,17 +61,20 @@ const Search: React.FC<SearchProps> = ({ onUserActive }) => {
       <div className="relative rounded-[32px] bg-[#2c526f]">
         <Input
           placeholder="Search JIRBDAI library"
+          value={inputValue}
           onChange={handleChange}
           onFocus={handleFocus}
           onBlur={handleBlur}
+          onKeyDown={handleKeyDown} // ✅ Trigger search on Enter
           className="h-[52px] bg-[#2c526f] px-6 pr-10 text-white placeholder:text-white/40"
         />
         <Image
+          onClick={() => handleClick(inputValue)}
           src="/assets/images/search-pics.png"
           alt="Search"
           width={35}
           height={35}
-          className="absolute right-3 top-1/2 -translate-y-1/2"
+          className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer"
         />
       </div>
     </div>
